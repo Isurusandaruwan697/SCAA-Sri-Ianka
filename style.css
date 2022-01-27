@@ -1,0 +1,64 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+/*this is for the home page*/
+body{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+nav{
+    height: 85px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    box-shadow:2px 2px 12px rgba(0,0,0, 0.5);
+}
+
+nav ul{
+    float: right;
+    margin-right: 40px;
+}
+
+nav li{
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+/*navgation link design*/
+nav a{
+    color:rgba(0, 0, 0, 0.918);
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding:7px 22px ;
+    border-radius: 3px;
+
+}
+/*when mouse gos the box with border comes*/
+a.active,a:hover{
+    border: 1px solid rgb(34, 33, 33);
+    transition: .5s;
+    
+}
+/*icon export from the fontawsam*/
+nav #icon{
+    color: rgb(71, 67, 67);
+    font-size: 30px;
+    line-height:70px;
+    float: right;
+    margin-right: 60px;
+    padding-top: 25px;
+    cursor: pointer;
+    
+
+}
+
+label.logo{
+    font-size: 35px;
+    font-weight: bold;
+    color: rgb(54, 53, 53);
+    padding: 0 100px;
+    line-height: 80px;
+}
+/* nav bar is not functional yet this just a front end...need continuation with some css and js */
