@@ -1,250 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 *{
-    padding: 0;
-    margin: 0;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
 }
-/*this is for the home page*/
 body{
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 10px;
 
-nav{
-    height: 85px;
+}
+.container{
+  max-width: 400px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.15);
+}
+.container .title{
+  font-size: 25px;
+  font-weight: 500;
+  position: relative;
+}
+.container .title::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 30px;
+  border-radius: 5px;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+}
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 20px 0 12px 0;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #FBAB7E;
+}
+ form .gender-details .gender-title{
+  font-size: 20px;
+  font-weight: 500;
+ }
+ form .category{
+   display: flex;
+   width: 80%;
+   margin: 14px 0 ;
+   justify-content: space-between;
+ }
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ form .category label .dot{
+  height: 18px;
+  width: 18px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #d9d9d9;
+  border: 5px solid transparent;
+  transition: all 0.3s ease;
+}
+ #dot-1:checked ~ .category label .one,
+ #dot-2:checked ~ .category label .two,
+ #dot-3:checked ~ .category label .three{
+   background: #9b59b6;
+   border-color: #d9d9d9;
+ }
+ form input[type="radio"]{
+   display: none;
+ }
+ form .button{
+   height: 45px;
+   margin: 35px 0
+ }
+ form .button input{
+   height: 100%;
+   width: 100%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color: #FBAB7E;
+background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  background-color: #FBAB7E;
+background-image: linear-gradient(250deg, #FBAB7E 0%, #F7CE68 100%);
+
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
     width: 100%;
-    background-color: rgb(255, 255, 255);
-    box-shadow:2px 2px 12px rgba(0,0,0, 0.5);
-}
-
-nav ul{
-    float: right;
-    margin-right: 40px;
-    
-}
-
-nav li{
-    display: inline-block;
-    margin: 0 8px;
-    line-height: 80px;
-
-}
-/*navgation link design*/
-nav a{
-    color:rgba(0, 0, 0, 0.918);
-    font-size: 17px;
-    text-transform: uppercase;
-    border: 1px solid transparent;
-    padding:7px 10px ;
-    border-radius: 3px;
-    letter-spacing: 2px;
-
-
-}
-/*when mouse gos the box with border comes*/
-a.active,a:hover{
-    border: 1px solid rgb(34, 33, 33);
-    transition: .5s;
-    
-}
-/*icon export from the fontawsam*/
-nav #icon{
-    color: rgb(71, 67, 67);
-    font-size: 30px;
-    line-height:70px;
-    float: right;
-    margin-right: 60px;
-    padding-top: 25px;
-    cursor: pointer;
-    display: none;
-    
-}
-/*changes of logo happens whenthe minimize */
-@media(max-width :1048px){
-    label.logo{
-        font-size: 30px;
-        padding-left: 60px;
-    }
-    nav ul{
-        margin-right: 20px;
-
-    }
-    nav a{
-        font-size: 17px;
-    }
-}
-/*icon get show when the minimize of the page */
-@media(max-width :909px){
-    nav #icon{
-        display: block;
-
-    }
-    nav ul{
-        position: fixed;
-        width: 100%;
-        height: 100vh;
-        background:rgb(221, 163, 48);
-        top: 80px;
-        left: 0px;
-        text-align: center;
-        transition: all 2s;
-       
-    }
-    /*menu bar links get into same line*/
-    nav li{
-        display: block;
-        margin: 50px 0;
-        line-height: 30px;
-        
-    }
-    nav a{
-        font-size: 20px;
-    }
-    /*when minimize box conents romoved and add color for mouse pointer goes*/
-    a.active,a:hover{
-        border: none;
-        color: rgb(24, 35, 83);
-    }
-
-}
-
-a.active1{
-    font-weight: bold;
-}
-
-img.logo{
-    padding: 0 100px;
-    width: 190px;
-}
-/*add new img logo this is previous logo*/
-/*label.logo{
-    font-size: 35px;
-    font-weight: bold;
-    color: rgb(54, 53, 53);
-    padding: 0 97px;
-    line-height: 80px;
-    text-transform: uppercase;
-}*/
-
-/* nav bar is not functional yet this just a front end...need continuation with some css and js */
-
-
-
-
-
-
-
-/* start the social icon decoration part*/
-.social-icons{
-
-    position: fixed;
-    top: 55%;
-    right: 0px;
-    transform: translateX(-50%);}
-
-.social-icons a{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    padding: 0px;
-    background-color: rgb(255, 255, 255);
-    border: 1px solid black;
-    line-height: 0px;
-    box-shadow: 2px 2px 12px rgba(0,0,0,0.3);
-}
-
-.social-icons i{
-    color: rgb(48, 48, 48);
-    font-size: 20px;
-}
-.social-icons a:hover {background-color: rgb(46, 38, 38);
-transition: all ease 0.5s;}
-.social-icons a:hover i{color: rgb(255, 255, 255);transition: all ease 0.5s;}
-
-/* when minimize the icon boxes disble*/
-@media (max-width :909px) {
-    .social-icons{
-        display: none;
-    }
-}
-/* end of the social icon decaration part*/
-
-/*start of the slder part */
-.b{
+  }
+  form .category{
     width: 100%;
-    height: 700px;
-    background-image: url(image/Earl\ Jayasuriya\ 167.jpg);
-    background-repeat: no-repeat;
-    background-size: 100%;
-    animation: slider 40s infinite linear;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
 }
-
-@keyframes slider{
-    0%{
-        background-image: url(image/Earl\ Jayasuriya\ 167.jpg);
-    }
-    50%{
-        background-image: url(image/SRI_LANKA_-_1001_-_Bambini.jpg);
-    }
-}
-
-.text{
-    width: 800px;
-    position: absolute;
-    top: 230px;
-    left: 180px;
-    color:#fff;
-    padding-left: 120px;
-    animation: an 2s ease-out 1 both;
-}
-/* text effections of the slider when lord they were some effections*/
-@keyframes an{
-    from{
-        opacity: 0;
-        transform: perspective(500px) translate3d(-35px, -40px, -190px) rotate3d(1, -1, 0, 35deg);
-    }
-    to{
-        opacity: 1;
-        transform: perspective(500px) translate3d(0, 0, 0);
-    }
-}
-
-/*when minimize the text hide*/
-@media (max-width :909px) {
-    .text{
-        display: none;
-    }
-}
-.text h1{
-    margin-bottom: 30px;
-    font-size: 70px;
-}
-
-.text p{
-    font-size: 35px;
-    margin-bottom: 40px;
-}
-
-.text button{
-    margin-left: 50px;
-}
-
-.button1{
-    position:fixed;
-    width: 140px;
-    height: 42px;
-    border-radius: 30px;
-    font-weight: bold;
-    font-size: 14px;
-    outline: none;
-    margin: 0px 10px;
-    background-color: #fff;
-    border: none;
-
-}
-button:active{
-    transform: scale(1.2);
-}
-
-/*end of the slider part*/
